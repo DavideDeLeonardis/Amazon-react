@@ -1,8 +1,7 @@
-import { Fragment } from "react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
-import Products from "./Products/Products";
 import Header from "./Layout/Header";
+import Products from "./Products/Products";
 import Footer from "./Layout/Footer";
 import Cart from "./Cart/Cart";
 
@@ -23,7 +22,9 @@ function App() {
       <Fragment>
          {cartIsShown && <Cart onClose={hideCartHandler} />}
          <Header onShowCart={showCarthandler} />
-         <Products />
+         <main>
+            <Products />
+         </main>
          <Footer />
       </Fragment>
    );
