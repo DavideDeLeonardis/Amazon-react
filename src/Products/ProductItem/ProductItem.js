@@ -7,7 +7,7 @@ const ProductItem = (props) => {
             <div>{props.description}</div>
             <img src={props.image} alt={props.name} />
          </div>
-         <div>{props.price}</div>
+         <div>{props.price}€</div>
          <hr />
       </li>
    );
