@@ -1,46 +1,37 @@
 import { useState, useEffect } from "react";
 
 import ProductItem from "./ProductItem/ProductItem";
+import useFetch from "../hooks/useFetch";
 
 const AvailableProducts = () => {
    const [products, setProducts] = useState([]);
-   const [isLoading, setIsLoading] = useState(true);
-   const [httpError, setHttpError] = useState();
+   const { isLoading, error, sendRequest: fetchProducts } = useFetch();
 
    useEffect(() => {
-      const fetchProducts = async () => {
-         const response = await fetch(
-            "https://react--clone-d9242-default-rtdb.firebaseio.com/products.json"
-         );
+      const transformProducts = (productsObj) => {
+         const loadedProducts = [];
 
-         if (!response.ok) {
-            throw new Error("Something went wrong!");
-         }
-
-         const responseData = await response.json();
-
-         const loadedMeals = [];
-
-         for (const key in responseData) {
-            loadedMeals.push({
+         for (const key in productsObj) {
+            loadedProducts.push({
                id: key,
-               brand: responseData[key].brand,
-               name: responseData[key].name,
-               image: responseData[key].image,
-               description: responseData[key].description,
-               price: responseData[key].price,
+               brand: productsObj[key].brand,
+               name: productsObj[key].name,
+               image: productsObj[key].image,
+               description: productsObj[key].description,
+               price: productsObj[key].price,
             });
          }
 
-         setProducts(loadedMeals);
-         setIsLoading(false);
+         setProducts(loadedProducts);
       };
 
-      fetchProducts().catch((error) => {
-         setIsLoading(false);
-         setHttpError(error.message);
-      });
-   }, []);
+      fetchProducts(
+         {
+            url: "https://react--clone-d9242-default-rtdb.firebaseio.com/products.json",
+         },
+         transformProducts
+      );
+   }, [fetchProducts]);
 
    if (isLoading) {
       return (
@@ -50,10 +41,10 @@ const AvailableProducts = () => {
       );
    }
 
-   if (httpError) {
+   if (error) {
       return (
          <section>
-            <p>{httpError}</p>
+            <p>{error}</p>
          </section>
       );
    }
