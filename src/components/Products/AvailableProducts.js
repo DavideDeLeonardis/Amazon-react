@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import ProductItem from "./ProductItem/ProductItem";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 
 const AvailableProducts = () => {
    const [products, setProducts] = useState([]);
@@ -26,7 +26,7 @@ const AvailableProducts = () => {
       };
 
       fetchProducts(
-         {
+         { 
             url: "https://react--clone-d9242-default-rtdb.firebaseio.com/products.json",
          },
          transformProducts
