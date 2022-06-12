@@ -26,7 +26,7 @@ const AvailableProducts = () => {
       };
 
       fetchProducts(
-         { 
+         {
             url: "https://react--clone-d9242-default-rtdb.firebaseio.com/products.json",
          },
          transformProducts

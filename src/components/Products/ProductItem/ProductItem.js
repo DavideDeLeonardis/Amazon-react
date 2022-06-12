@@ -8,15 +8,6 @@ const ProductItem = (props) => {
 
    const price = `$${props.price.toFixed(2)}`;
 
-   const addToCartHandler = (amount) => {
-      cartCtx.addItem({
-         id: props.id,
-         name: props.name,
-         amount: amount,
-         price: props.price,
-      });
-   };
-
    return (
       <li>
          <div>
@@ -27,7 +18,7 @@ const ProductItem = (props) => {
          </div>
          <div>{price}€</div>
          <div>
-            <ProductItemForm onAddToCart={addToCartHandler} />
+            <ProductItemForm onAddToCart={'test'} />
          </div>
          <hr />
       </li>
