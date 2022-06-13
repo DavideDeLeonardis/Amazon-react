@@ -14,8 +14,7 @@ const ProductItemForm = (props) => {
 
       if (
          enteredAmount.trim().length === 0 ||
-         enteredAmountNumber < 1 ||
-         enteredAmountNumber > 5
+         enteredAmountNumber < 1
       ) {
          setAmountIsValid(false);
          return;
@@ -33,13 +32,12 @@ const ProductItemForm = (props) => {
                id: "amount",
                type: "number",
                min: "1",
-               max: "5",
                step: "1",
                defaultValue: "1",
             }}
          />
          <button>+ Add</button>
-         {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
+         {!amountIsValid && <p>Please enter a valid amount (Min. 1).</p>}
       </form>
    );
 };
