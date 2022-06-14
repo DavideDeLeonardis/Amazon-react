@@ -52,6 +52,7 @@ const AvailableProducts = () => {
    const productsList = products.map((product) => (
       <ProductItem
          key={product.id}
+         id={product.id}
          brand={product.brand}
          name={product.name}
          image={product.image}

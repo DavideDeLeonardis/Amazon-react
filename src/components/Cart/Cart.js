@@ -1,7 +1,7 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useState, useContext } from "react";
 
 import CartItem from "./CartItem";
-import Checkout from './Checkout';
+import Checkout from "./Checkout";
 import CartContext from "../../store/cart-context";
 import classes from "./Cart.module.css";
 
@@ -26,6 +26,10 @@ const Cart = (props) => {
       setIsCheckout(true);
    };
 
+   const clearCart = () => {
+      cartCtx.clearCart();
+   };
+
    const submitOrderHandler = async (userData) => {
       setIsSubmitting(true);
       await fetch(
@@ -44,10 +48,10 @@ const Cart = (props) => {
    };
 
    const cartItems = (
-      <ul className={classes["cart-items"]}>
-         {cartCtx.items.map((item, index) => (
+      <ul>
+         {cartCtx.items.map((item) => (
             <CartItem
-               key={index}
+               key={item.id}
                name={item.name}
                amount={item.amount}
                price={item.price}
@@ -61,7 +65,12 @@ const Cart = (props) => {
    const modalActions = (
       <div>
          <button onClick={props.onClose}>Close</button>
-         {hasItems && <button onClick={orderHandler}>Order</button>}
+         {hasItems && (
+            <Fragment>
+               <button onClick={clearCart}>Clear</button>
+               <button onClick={orderHandler}>Order</button>
+            </Fragment>
+         )}
       </div>
    );
 
@@ -72,8 +81,9 @@ const Cart = (props) => {
             <span>Total Amount</span>
             <span>{totalAmount}</span>
          </div>
-         {isCheckout &&
-             <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />}
+         {isCheckout && (
+            <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
+         )}
          {!isCheckout && modalActions}
       </Fragment>
    );
