@@ -1,11 +1,7 @@
 import React from "react";
 
 const Input = React.forwardRef((props, ref) => {
-   return (
-      <div>
-         <input classame={props.classes} ref={ref} {...props.input} />
-      </div>
-   );
+   return <input className={props.classNames} ref={ref} {...props.input} />;
 });
 
 export default Input;

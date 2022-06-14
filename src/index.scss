@@ -1,0 +1,46 @@
+@use "./assets/scss/mixins" as mixin;
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-size: 100%;
+   font-family: 'PT Sans', sans-serif;
+   margin-top: 60px;
+}
+
+ul {
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+button, a {
+   cursor: pointer;
+}
+
+.doubleLine {
+   @include mixin.flex(
+      column,
+      $justify: center,
+      $align: flex-start,
+      $gap: 0,
+      $wrap: true
+   );
+
+   span:first-child {
+      font-size: 0.8em;
+      color: rgb(210, 210, 210);
+   }
+
+   span:nth-child(2) {
+      font-weight: bold;
+   }
+}

@@ -1,0 +1,116 @@
+@use "../../assets/scss/_mixins.scss" as mixin;
+
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   @include mixin.flex(
+      row,
+      $justify: space-around,
+      $align: center,
+      $gap: 0,
+      $wrap: true
+   );
+   width: 100%;
+   height: 60px;
+   color: #ffffff;
+   background-color: #121921;
+   padding: 10px;
+
+   .logo {
+      width: 90px;
+   }
+
+   .container_with_icon {
+      @include mixin.flex(
+         row,
+         $justify: center,
+         $align: center,
+         $gap: 5px,
+         $wrap: true
+      );
+      color: #ffffff;
+      background-color: inherit;
+      border: none;
+      
+      .location_icon,
+      .cart_icon {
+         font-size: 1.5em;
+         color: white;
+         transition: 200ms;
+      }
+      
+      &:hover .cart_icon {
+         transform: scale(1.2);
+      }
+   }
+
+   .input_container {
+      @include mixin.flex(
+         column,
+         $justify: center,
+         $align: center,
+         $gap: 0,
+         $wrap: true
+      );
+      height: 100%;
+
+      .search_input {
+         width: calc(100% - 130px);
+         height: 100%;
+         font-size: 0.9em;
+         padding: 10px;
+         border: none;
+         border-left: 1px solid #646464;
+         outline: none;
+         transition: 100ms;
+
+         &:focus {
+            font-size: 1em;
+         }
+      }
+
+      .search_icon_container {
+         @include mixin.flex(
+            column,
+            $justify: center,
+            $align: center,
+            $gap: 0,
+            $wrap: true
+         );
+         height: 100%;
+         background-color: #f3a847;
+         border-radius: 0 3px 3px 0;
+         cursor: pointer;
+
+         .search_icon {
+            font-size: 1.2em;
+            color: #000000;
+            padding: 12px;
+         }
+
+         &:hover .search_icon {
+            transform: scale(1.15);
+            transition: 200ms;
+         }
+      }
+
+      .select {
+         width: 130px;
+         height: 100%;
+         font-size: 0.8em;
+         text-align: center;
+         color: #646464;
+         background-color: #f0f0f0;
+         border: none;
+         border-radius: 3px 0 0 3px;
+         outline: none;
+         transition: 200ms;
+         cursor: pointer;
+
+         &:hover {
+            background-color: #dadada;
+         }
+      }
+   }
+}

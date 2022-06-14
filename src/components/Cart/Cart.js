@@ -3,7 +3,7 @@ import { Fragment, useState, useContext } from "react";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import CartContext from "../../store/cart-context";
-import classes from "./Cart.module.css";
+import classes from "../../assets/scss/Cart.module.scss";
 
 const Cart = (props) => {
    const [isCheckout, setIsCheckout] = useState(false);

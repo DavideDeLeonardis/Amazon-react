@@ -6,7 +6,7 @@ import Footer from "./components/Layout/Footer";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 
-import "./index.css";
+import "./index.scss";
 
 function App() {
    const [cartIsShown, setCartIsShown] = useState(false);
