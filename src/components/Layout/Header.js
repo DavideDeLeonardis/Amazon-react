@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 
+import Navbar from "../Layout/Navbar";
+
 import Input from "../UI/Input";
 import Select from "../UI/NavSelect";
 import DoubleLine from "../UI/DoubleLine";
@@ -38,44 +40,52 @@ const Header = (props) => {
    );
 
    return (
-      <header className={classes.header}>
-         <div className={classes.container_logo}>
-            <img className={classes.logo} src={amazon_logo} alt="Amazon logo" />
-         </div>
+      <header>
+         <div className={classes.header_top}>
+            <div className={classes.container_logo}>
+               <img
+                  className={classes.logo}
+                  src={amazon_logo}
+                  alt="Amazon logo"
+               />
+            </div>
 
-         <div
-            className={`${classes.container_with_icon} d_none_w_md d_none_w_s`}
-         >
-            <FontAwesomeIcon
-               icon="fa-location-dot"
-               className={classes.location_icon}
+            <div
+               className={`${classes.container_with_icon} d_none_w_md d_none_w_s`}
+            >
+               <FontAwesomeIcon
+                  icon="fa-location-dot"
+                  className={classes.location_icon}
+               />
+               <DoubleLine lineOne={"Deliver to Davide"} lineTwo={"Italy"} />
+            </div>
+
+            {inputContainer}
+
+            <DoubleLine
+               className="d_none_w_md"
+               lineOne={"Hello, Sing in"}
+               lineTwo={
+                  <Fragment>
+                     Account & Lists
+                     <FontAwesomeIcon
+                        className={classes.caret_down_icon}
+                        icon="fa-solid fa-caret-down"
+                     />
+                  </Fragment>
+               }
             />
-            <DoubleLine lineOne={"Deliver to Davide"} lineTwo={"Italy"} />
+
+            <DoubleLine
+               className="d_none_w_md"
+               lineOne={"Returns"}
+               lineTwo={"& Orders"}
+            />
+
+            {cart}
          </div>
 
-         {inputContainer}
-
-         <DoubleLine
-            className="d_none_w_md"
-            lineOne={"Hello, Sing in"}
-            lineTwo={
-               <Fragment>
-                  Account & Lists
-                  <FontAwesomeIcon
-                     className={classes.caret_down_icon}
-                     icon="fa-solid fa-caret-down"
-                  />
-               </Fragment>
-            }
-         />
-
-         <DoubleLine
-            className="d_none_w_md"
-            lineOne={"Returns"}
-            lineTwo={"& Orders"}
-         />
-
-         {cart}
+         <Navbar />
       </header>
    );
 };
