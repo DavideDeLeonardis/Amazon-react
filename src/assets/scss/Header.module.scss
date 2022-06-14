@@ -18,8 +18,8 @@
    padding: 10px;
 
    & > *:hover:not(img, .input_container, button) {
-      transform: scale(1.05);
-      transition: 100ms;
+      transform: scale(1.03);
+      transition: 200ms;
       cursor: pointer;
    }
 
@@ -121,7 +121,7 @@
 
    .caret_down_icon {
       font-size: 0.7em;
-      color: gray;
+      color: rgb(210, 210, 210);
       padding-left: 3px;
    }
 }
