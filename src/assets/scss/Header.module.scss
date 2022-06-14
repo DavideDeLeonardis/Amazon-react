@@ -11,26 +11,34 @@
    background-color: #121921;
    padding: 10px;
 
-   & > *:hover:not(img, .input_container, button) {
-      transform: scale(1.03);
-      transition: 200ms;
-      cursor: pointer;
+   & > * {
+      height: 120%;
+      padding: 0 5px;
+      border: 1.5px solid transparent;
+
+      &:hover:not(.input_container, button) {
+         border: 1.5px solid #ffffff;
+         cursor: pointer;
+      }
    }
 
-   .logo {
-      width: 90px;
+   .container_logo {
+      @include mixin.flex;
+
+      .logo {
+         width: 90px;
+      }
    }
 
    .container_with_icon {
       @include mixin.flex($gap: 5px);
       color: #ffffff;
       background-color: inherit;
-      border: none;
 
       .location_icon,
       .cart_icon {
          font-size: 1.5em;
-         color: white;
+         color: #ffffff;
          transition: 200ms;
       }
 
@@ -67,7 +75,7 @@
          font-size: 0.9em;
          padding: 10px;
          border: none;
-         border-left: 1px solid #646464;
+         border-left: 1px solid #d2d2d2;
          outline: none;
          transition: 100ms;
 
@@ -97,7 +105,7 @@
 
    .caret_down_icon {
       font-size: 0.7em;
-      color: rgb(210, 210, 210);
+      color: #d2d2d2;
       padding-left: 3px;
    }
 }

@@ -39,7 +39,9 @@ const Header = (props) => {
 
    return (
       <header className={classes.header}>
-         <img className={classes.logo} src={amazon_logo} alt="Amazon logo" />
+         <div className={classes.container_logo}>
+            <img className={classes.logo} src={amazon_logo} alt="Amazon logo" />
+         </div>
 
          <div
             className={`${classes.container_with_icon} d_none_w_md d_none_w_s`}
