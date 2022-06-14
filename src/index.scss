@@ -9,7 +9,7 @@
 
 body {
    font-size: 100%;
-   font-family: 'PT Sans', sans-serif;
+   font-family: "PT Sans", sans-serif;
    margin-top: 60px;
 }
 
@@ -22,7 +22,8 @@ a {
    color: inherit;
 }
 
-button, a {
+button,
+a {
    cursor: pointer;
 }
 
@@ -36,11 +37,23 @@ button, a {
    );
 
    span:first-child {
-      font-size: 0.8em;
+      font-size: 0.75em;
       color: rgb(210, 210, 210);
    }
 
    span:nth-child(2) {
       font-weight: bold;
+   }
+}
+
+@media screen and (max-width: 991px) {
+   .d_none_w_md {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .d_none_w_s {
+      display: none !important;
    }
 }

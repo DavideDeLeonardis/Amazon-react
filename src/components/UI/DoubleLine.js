@@ -1,6 +1,6 @@
 const DoubleLine = (props) => {
    return (
-      <div className="doubleLine">
+      <div className={`${props.className} doubleLine`}>
          <span>{props.lineOne}</span>
          <span>{props.lineTwo}</span>
       </div>

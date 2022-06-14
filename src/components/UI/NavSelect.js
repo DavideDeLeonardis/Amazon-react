@@ -1,6 +1,6 @@
 const NavSelect = (props) => {
    return (
-      <select className={props.classNames}>
+      <select className={props.className}>
          <option defaultValue="All">All</option>
          <option value="search-alias=arts-crafts-intl-ship">
             Arts &amp; Crafts

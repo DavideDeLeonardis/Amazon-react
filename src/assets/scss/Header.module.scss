@@ -6,7 +6,7 @@
    left: 0;
    @include mixin.flex(
       row,
-      $justify: space-around,
+      $justify: space-between,
       $align: center,
       $gap: 0,
       $wrap: true
@@ -16,6 +16,12 @@
    color: #ffffff;
    background-color: #121921;
    padding: 10px;
+
+   & > *:hover:not(img, .input_container, button) {
+      transform: scale(1.05);
+      transition: 100ms;
+      cursor: pointer;
+   }
 
    .logo {
       width: 90px;
@@ -32,14 +38,14 @@
       color: #ffffff;
       background-color: inherit;
       border: none;
-      
+
       .location_icon,
       .cart_icon {
          font-size: 1.5em;
          color: white;
          transition: 200ms;
       }
-      
+
       &:hover .cart_icon {
          transform: scale(1.2);
       }
@@ -47,17 +53,35 @@
 
    .input_container {
       @include mixin.flex(
-         column,
-         $justify: center,
-         $align: center,
+         row,
+         $justify: initial,
+         $align: initial,
          $gap: 0,
          $wrap: true
       );
+      width: 50%;
       height: 100%;
 
+      .select {
+         width: 15%;
+         max-width: 100px;
+         font-size: 0.8em;
+         text-align: center;
+         color: #646464;
+         background-color: #f0f0f0;
+         border: none;
+         border-radius: 3px 0 0 3px;
+         outline: none;
+         transition: 200ms;
+         cursor: pointer;
+
+         &:hover {
+            background-color: #dadada;
+         }
+      }
+
       .search_input {
-         width: calc(100% - 130px);
-         height: 100%;
+         width: calc(100% - 15% - 40px);
          font-size: 0.9em;
          padding: 10px;
          border: none;
@@ -78,7 +102,7 @@
             $gap: 0,
             $wrap: true
          );
-         height: 100%;
+         width: 40px;
          background-color: #f3a847;
          border-radius: 0 3px 3px 0;
          cursor: pointer;
@@ -86,7 +110,6 @@
          .search_icon {
             font-size: 1.2em;
             color: #000000;
-            padding: 12px;
          }
 
          &:hover .search_icon {
@@ -94,23 +117,21 @@
             transition: 200ms;
          }
       }
+   }
 
-      .select {
-         width: 130px;
-         height: 100%;
-         font-size: 0.8em;
-         text-align: center;
-         color: #646464;
-         background-color: #f0f0f0;
-         border: none;
-         border-radius: 3px 0 0 3px;
-         outline: none;
-         transition: 200ms;
-         cursor: pointer;
+   .caret_down_icon {
+      font-size: 0.7em;
+      color: gray;
+      padding-left: 3px;
+   }
+}
 
-         &:hover {
-            background-color: #dadada;
-         }
+@media screen and (max-width: 768px) {
+   .header {
+      justify-content: space-around;
+
+      .input_container {
+         width: 60%;
       }
    }
 }
