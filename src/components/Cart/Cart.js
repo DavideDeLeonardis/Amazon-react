@@ -67,7 +67,7 @@ const Cart = (props) => {
          <button onClick={props.onClose}>Close</button>
          {hasItems && (
             <Fragment>
-               <button onClick={clearCart}>Clear</button>
+               <button onClick={clearCart}>Clear cart</button>
                <button onClick={orderHandler}>Order</button>
             </Fragment>
          )}

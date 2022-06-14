@@ -25,9 +25,9 @@ const ProductItemForm = (props) => {
 
    return (
       <form onSubmit={submitHandler}>
+         <label>Amount</label>
          <Input
             ref={amountInputRef}
-            label="Amount"
             input={{
                id: "amount",
                type: "number",
