@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import Navbar from "../Layout/Navbar";
+import Nav from "./HeaderNavbar";
 import Input from "../UI/Input";
 import Select from "../UI/NavSelect";
 import DoubleLine from "../UI/DoubleLine";
@@ -81,7 +81,7 @@ const Header = (props) => {
    return (
       <header>
          {headerTop}
-         <Navbar />
+         <Nav />
       </header>
    );
 };

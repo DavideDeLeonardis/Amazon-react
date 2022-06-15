@@ -20,6 +20,7 @@ const Cart = (props) => {
 
    const cartItemAddHandler = (item) => {
       cartCtx.addItem(item);
+      console.log(item);
    };
 
    const orderHandler = () => {
@@ -52,6 +53,7 @@ const Cart = (props) => {
          {cartCtx.items.map((item) => (
             <CartItem
                key={item.id}
+               id={item.id}
                name={item.name}
                amount={item.amount}
                price={item.price}

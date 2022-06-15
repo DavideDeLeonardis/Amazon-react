@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-import ProductItem from "./ProductItem/ProductItem";
-import useFetch from "../../hooks/useFetch";
+import ProductItem from "../components/ProductItem/ProductItem";
+import useFetch from "../hooks/useFetch";
 
-const AvailableProducts = () => {
+const Products = () => {
    const [products, setProducts] = useState([]);
    const { isLoading, error, sendRequest: fetchProducts } = useFetch();
 
@@ -64,4 +64,4 @@ const AvailableProducts = () => {
    return <ul>{productsList}</ul>;
 };
 
-export default AvailableProducts;
+export default Products;

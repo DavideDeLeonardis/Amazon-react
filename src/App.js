@@ -1,9 +1,12 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 import Intro from "./components/Layout/Intro";
 import Header from "./components/Layout/Header";
-import Products from "./components/Products/Products";
+import Nav from "./components/Layout/MainNavbar";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 import Footer from "./components/Layout/Footer";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
@@ -13,8 +16,6 @@ import "./index.scss";
 function App() {
    const [cartIsShown, setCartIsShown] = useState(false);
 
-   const portalElement = document.getElementById('overlays');
-
    const showCarthandler = () => {
       setCartIsShown(true);
    };
@@ -23,13 +24,22 @@ function App() {
       setCartIsShown(false);
    };
 
+   const cartPortal = ReactDOM.createPortal(
+      cartIsShown && <Cart onClose={hideCartHandler} />,
+      document.getElementById("overlays")
+   );
+
    return (
       <CartProvider>
-         {ReactDOM.createPortal(cartIsShown && <Cart onClose={hideCartHandler} />, portalElement)}
+         {cartPortal}
          <Header onShowCart={showCarthandler} />
+         <Intro />
          <main>
-            <Intro />
-            <Products />
+            <Nav />
+            <Routes>
+               <Route path="/" element={<Products />} />
+               <Route path="/products/:productId" element={<ProductDetails />} />
+            </Routes>
          </main>
          <Footer />
       </CartProvider>

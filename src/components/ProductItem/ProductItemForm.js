@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import Input from "../../UI/Input";
+import Input from "../UI/Input";
 
 const ProductItemForm = (props) => {
    const [amountIsValid, setAmountIsValid] = useState(true);

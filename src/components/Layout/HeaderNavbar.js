@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import classes from "../../assets/scss/Header.module.scss";
 
-const NavBar = () => {
+const HeaderNavbar = () => {
    const listItems = [
       "Today's Deals",
       "Cursomer Service",
@@ -26,9 +26,11 @@ const NavBar = () => {
             </li>
             {navItems}
          </ul>
-         <a href="/" className={classes.nav_right}>Shop Father's Day Gifts</a>
+         <a href="/" className={classes.nav_right}>
+            Shop Father's Day Gifts
+         </a>
       </nav>
    );
 };
 
-export default NavBar;
+export default HeaderNavbar;
