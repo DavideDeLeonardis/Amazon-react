@@ -39,52 +39,51 @@ const Header = (props) => {
       </button>
    );
 
-   return (
-      <header>
-         <div className={classes.header_top}>
-            <div className={classes.container_logo}>
-               <img
-                  className={classes.logo}
-                  src={amazon_logo}
-                  alt="Amazon logo"
-               />
-            </div>
-
-            <div
-               className={`${classes.container_with_icon} d_none_w_md d_none_w_s`}
-            >
-               <FontAwesomeIcon
-                  icon="fa-location-dot"
-                  className={classes.location_icon}
-               />
-               <DoubleLine lineOne={"Deliver to Davide"} lineTwo={"Italy"} />
-            </div>
-
-            {inputContainer}
-
-            <DoubleLine
-               className="d_none_w_md"
-               lineOne={"Hello, Sing in"}
-               lineTwo={
-                  <Fragment>
-                     Account & Lists
-                     <FontAwesomeIcon
-                        className={classes.caret_down_icon}
-                        icon="fa-solid fa-caret-down"
-                     />
-                  </Fragment>
-               }
-            />
-
-            <DoubleLine
-               className="d_none_w_md"
-               lineOne={"Returns"}
-               lineTwo={"& Orders"}
-            />
-
-            {cart}
+   const headerTop = (
+      <div className={classes.header_top}>
+         <div className={classes.container_logo}>
+            <img className={classes.logo} src={amazon_logo} alt="Amazon logo" />
          </div>
 
+         <div
+            className={`${classes.container_with_icon} d_none_w_md d_none_w_s`}
+         >
+            <FontAwesomeIcon
+               icon="fa-location-dot"
+               className={classes.location_icon}
+            />
+            <DoubleLine lineOne={"Deliver to Davide"} lineTwo={"Italy"} />
+         </div>
+
+         {inputContainer}
+
+         <DoubleLine
+            className="d_none_w_md"
+            lineOne={"Hello, Sing in"}
+            lineTwo={
+               <Fragment>
+                  Account & Lists
+                  <FontAwesomeIcon
+                     className={classes.caret_down_icon}
+                     icon="fa-solid fa-caret-down"
+                  />
+               </Fragment>
+            }
+         />
+
+         <DoubleLine
+            className="d_none_w_md"
+            lineOne={"Returns"}
+            lineTwo={"& Orders"}
+         />
+
+         {cart}
+      </div>
+   );
+
+   return (
+      <header>
+         {headerTop}
          <Navbar />
       </header>
    );
