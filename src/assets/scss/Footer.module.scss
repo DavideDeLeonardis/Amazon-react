@@ -1,7 +1,18 @@
 @use "../../assets/scss/_mixins.scss" as mixin;
 
 .footer {
-   @include mixin.flex();
-   height: 60px;
-   border-top: 1px solid black;
+   color: #ffffff;
+
+   .top {
+      text-align: center;
+      font-size: 0.9em;
+      background-color: #36475a;
+      padding: 15px 0;
+   }
+
+   .bottom {
+      text-align: center;
+      background-color: #242f3e;
+      padding: 20px 5px;
+   }
 }

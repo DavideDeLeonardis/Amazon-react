@@ -84,7 +84,7 @@ const Header = (props) => {
    );
 
    return (
-      <header>
+      <header id="header">
          {headerTop}
          <Nav />
       </header>

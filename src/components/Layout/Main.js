@@ -4,7 +4,7 @@ import Nav from "./MainNavbar";
 import AllProducts from "../../pages/AllProducts";
 // import ProductDetails from "../../pages/...ProductDetails";
 
-const Main = (props) => {
+const Main = () => {
    return (
       <main>
          <Nav />
