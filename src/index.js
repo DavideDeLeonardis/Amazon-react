@@ -1,8 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import App from "./App";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
    faLocationDot,
@@ -11,6 +9,8 @@ import {
    faCaretDown,
    faBars,
 } from "@fortawesome/free-solid-svg-icons";
+
+import App from "./App";
 
 library.add(faLocationDot, faSearch, faCartShopping, faCaretDown, faBars);
 

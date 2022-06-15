@@ -1,17 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import navListItems from "../../assets/config/headerNavItems";
+
 import classes from "../../assets/scss/Header.module.scss";
 
 const HeaderNavbar = () => {
-   const listItems = [
-      "Today's Deals",
-      "Cursomer Service",
-      "Registry",
-      "Gift Cards",
-      "Sell",
-   ];
-
-   const navItems = listItems.map((item, index) => (
+   const navItems = navListItems.map((item, index) => (
       <li key={index} className="d_none_w_s">
          {item}
       </li>
