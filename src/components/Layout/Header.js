@@ -1,14 +1,11 @@
 import { Fragment } from "react";
 
 import Navbar from "../Layout/Navbar";
-
 import Input from "../UI/Input";
 import Select from "../UI/NavSelect";
 import DoubleLine from "../UI/DoubleLine";
-
-import amazon_logo from "../../assets/images/amazon-logo-white.png";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import amazon_logo from "../../assets/images/amazon-logo-white.png";
 
 import classes from "../../assets/scss/Header.module.scss";
 
