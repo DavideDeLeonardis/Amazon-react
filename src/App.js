@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 import Intro from "./components/Layout/Intro";
 import Header from "./components/Layout/Header";
@@ -37,8 +37,9 @@ function App() {
          <main>
             <Nav />
             <Routes>
-               <Route path="/" element={<Products />} />
-               <Route path="/products/:productId" element={<ProductDetails />} />
+               <Route path="/" element={<Navigate replace to="/products" />} />
+               <Route path="/products" element={<Products />} />
+               <Route path="products/:productId" element={<ProductDetails />} />
             </Routes>
          </main>
          <Footer />

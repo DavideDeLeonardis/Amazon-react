@@ -21,6 +21,7 @@ const ProductDetail = (props) => {
    return (
       <section>
          <h1>{props.name}</h1>
+         <h1>{props.brand}</h1>
          <p>{params.productId}</p>
          <ProductItemForm onAddToCart={addToCartHandler} />
       </section>
