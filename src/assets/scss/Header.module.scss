@@ -1,121 +1,167 @@
 @use "../../assets/scss/_mixins.scss" as mixin;
 
-.header_top {
+header {
    position: fixed;
    top: 0;
    left: 0;
-   @include mixin.flex($justify: space-between);
    width: 100%;
-   height: 60px;
    color: #ffffff;
-   background-color: #121921;
-   padding: 10px;
 
-   & > * {
-      height: 120%;
-      padding: 0 5px;
-      border: 1.5px solid transparent;
+   .header_top {
+      @include mixin.flex($justify: space-between);
+      height: 60px;
+      background-color: #121921;
+      padding: 10px;
 
-      &:hover:not(.input_container, button) {
-         border: 1.5px solid #ffffff;
-         cursor: pointer;
+      & > * {
+         height: 120%;
+         padding: 0 3px;
+         border: 1.5px solid transparent;
+
+         &:hover:not(.input_container, button) {
+            border: 1.5px solid #ffffff;
+            cursor: pointer;
+         }
       }
-   }
 
-   .container_logo {
-      @include mixin.flex;
+      .container_logo {
+         @include mixin.flex;
 
-      .logo {
-         width: 90px;
+         .logo {
+            width: 90px;
+         }
       }
-   }
 
-   .container_with_icon {
-      @include mixin.flex($gap: 5px);
-      color: #ffffff;
-      background-color: inherit;
-
-      .location_icon,
-      .cart_icon {
-         font-size: 1.5em;
+      .container_with_icon {
+         @include mixin.flex($gap: 5px);
          color: #ffffff;
-         transition: 200ms;
-      }
+         background-color: inherit;
 
-      &:hover .cart_icon {
-         transform: scale(1.2);
-      }
-   }
-
-   .input_container {
-      @include mixin.flex($align: initial);
-      width: 50%;
-      height: 100%;
-
-      .select {
-         width: 15%;
-         max-width: 100px;
-         font-size: 0.8em;
-         text-align: center;
-         color: #646464;
-         background-color: #f0f0f0;
-         border: none;
-         border-radius: 3px 0 0 3px;
-         outline: none;
-         transition: 200ms;
-         cursor: pointer;
-
-         &:hover {
-            background-color: #dadada;
-         }
-      }
-
-      .search_input {
-         width: calc(100% - 15% - 40px);
-         font-size: 0.9em;
-         padding: 10px;
-         border: none;
-         border-left: 1px solid #d2d2d2;
-         outline: none;
-         transition: 100ms;
-
-         &:focus {
-            font-size: 1em;
-         }
-      }
-
-      .search_icon_container {
-         @include mixin.flex($direction: column);
-         width: 40px;
-         background-color: #f3a847;
-         border-radius: 0 3px 3px 0;
-         cursor: pointer;
-
-         .search_icon {
-            font-size: 1.2em;
-            color: #000000;
-         }
-
-         &:hover .search_icon {
-            transform: scale(1.15);
+         .location_icon,
+         .cart_icon {
+            font-size: 1.5em;
+            color: #ffffff;
             transition: 200ms;
          }
+
+         &:hover .cart_icon {
+            transform: scale(1.2);
+         }
+      }
+
+      .input_container {
+         @include mixin.flex($align: initial);
+         width: 50%;
+         height: 100%;
+
+         .select {
+            width: 15%;
+            max-width: 100px;
+            font-size: 0.8em;
+            text-align: center;
+            color: #646464;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 3px 0 0 3px;
+            outline: none;
+            transition: 200ms;
+            cursor: pointer;
+
+            &:hover {
+               background-color: #dadada;
+            }
+         }
+
+         .search_input {
+            width: calc(100% - 15% - 40px);
+            font-size: 0.9em;
+            padding: 10px;
+            border: none;
+            border-left: 1px solid #d2d2d2;
+            outline: none;
+            transition: 100ms;
+
+            &:focus {
+               font-size: 1em;
+            }
+         }
+
+         .search_icon_container {
+            @include mixin.flex($direction: column);
+            width: 40px;
+            background-color: #f3a847;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+
+            .search_icon {
+               font-size: 1.2em;
+               color: #000000;
+            }
+
+            &:hover .search_icon {
+               transform: scale(1.15);
+               transition: 200ms;
+            }
+         }
+      }
+
+      .caret_down_icon {
+         font-size: 0.7em;
+         color: #d2d2d2;
+         padding-left: 3px;
       }
    }
 
-   .caret_down_icon {
-      font-size: 0.7em;
-      color: #d2d2d2;
-      padding-left: 3px;
+   nav {
+      @include mixin.flex($justify: space-between);
+      height: 40px;
+      font-weight: 600;
+      font-size: 0.9em;
+      background-color: #242f3e;
+      padding: 0 calc(1em - 6px) 0 calc(1em - 3px);
+
+      ul {
+         @include mixin.flex($gap: 10px);
+
+         li {
+            @include mixin.flex();
+            padding: 5px;
+            border: 1.5px solid transparent;
+
+            &:first-child {
+               padding: 3px 5px;
+            }
+
+            .bars_icon {
+               font-size: 1.5em;
+               margin-right: 5px;
+            }
+
+            &:hover {
+               border: 1.5px solid #ffffff;
+               cursor: pointer;
+            }
+         }
+      }
+
+      .nav_right {
+         padding: 5px;
+         border: 1.5px solid transparent;
+
+         &:hover {
+            border: 1.5px solid #ffffff;
+            cursor: pointer;
+         }
+      }
    }
-}
 
-@media screen and (max-width: 768px) {
-   .header {
-      justify-content: space-around;
+   @media screen and (max-width: 768px) {
+      .header {
+         justify-content: space-around;
 
-      .input_container {
-         width: 60%;
+         .input_container {
+            width: 60%;
+         }
       }
    }
 }
