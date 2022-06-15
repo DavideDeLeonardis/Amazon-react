@@ -20,6 +20,7 @@ const ProductDetail = (props) => {
 
    return (
       <section>
+         PRODUCT DETAILS
          <h1>{props.name}</h1>
          <h1>{props.brand}</h1>
          <p>{params.productId}</p>

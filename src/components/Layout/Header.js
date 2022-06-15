@@ -2,7 +2,8 @@ import { Fragment } from "react";
 
 import Nav from "./HeaderNavbar";
 import Input from "../UI/Input";
-import Select from "../UI/NavSelect";
+import Select from "../UI/Select";
+import selectValues from "../../assets/config/headerSelectValues";
 import DoubleLine from "../UI/DoubleLine";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import amazon_logo from "../../assets/images/amazon-logo-white.png";
@@ -12,7 +13,11 @@ import classes from "../../assets/scss/Header.module.scss";
 const Header = (props) => {
    const inputContainer = (
       <div className={classes.input_container}>
-         <Select className={classes.select} />
+         <Select
+            className={classes.select}
+            defaultValue="All"
+            values={selectValues}
+         />
          <Input
             className={classes.search_input}
             input={{ id: "search", type: "text", placeholder: "Cerca" }}

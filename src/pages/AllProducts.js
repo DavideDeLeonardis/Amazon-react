@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ProductItem from "../components/ProductItem/ProductItem";
 import useFetch from "../hooks/useFetch";
 
-const Products = () => {
+const AllProducts = () => {
    const [products, setProducts] = useState([]);
    const { isLoading, error, sendRequest: fetchProducts } = useFetch();
 
@@ -64,4 +64,4 @@ const Products = () => {
    return <ul>{productsList}</ul>;
 };
 
-export default Products;
+export default AllProducts;
