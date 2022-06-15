@@ -1,0 +1,7 @@
+@use "../../assets/scss/_mixins.scss" as mixin;
+
+.footer {
+   @include mixin.flex();
+   height: 60px;
+   border-top: 1px solid black;
+}

@@ -1,0 +1,7 @@
+@use "../../assets/scss/_mixins.scss" as mixin;
+
+.section {
+   @include mixin.flex();
+   height: 60px;
+   border-bottom: 1px solid black;
+}

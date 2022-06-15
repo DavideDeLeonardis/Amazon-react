@@ -1,5 +1,7 @@
+import classes from "../../assets/scss/Intro.module.scss";
+
 const Intro = () => {
-   return <section>DESCRIZIONE PROGETTO</section>;
+   return <section className={classes.section}>DESCRIZIONE PROGETTO</section>;
 };
 
 export default Intro;
