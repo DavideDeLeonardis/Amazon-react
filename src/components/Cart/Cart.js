@@ -3,7 +3,6 @@ import { Fragment, useState, useContext } from "react";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import CartContext from "../../store/cart-context";
-import useFetch from "../../hooks/useFetch";
 
 import classes from "../../assets/scss/Cart.module.scss";
 
@@ -12,7 +11,6 @@ const Cart = (props) => {
    const [isSubmitting, setIsSubmitting] = useState(false);
    const [didSubmit, setDidSubmit] = useState(false);
    const cartCtx = useContext(CartContext);
-   const { sendRequest: {2: fetchProducts} } = useFetch();
 
    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
    const hasItems = cartCtx.items.length > 0;
@@ -33,18 +31,20 @@ const Cart = (props) => {
       cartCtx.clearCart();
    };
 
-   const submitOrderHandler = (userData) => {
+   const submitOrderHandler = async (userData) => {
       setIsSubmitting(true);
-
-      fetchProducts({
-         url: "https://react--clone-d9242-default-rtdb.firebaseio.com/orders.json",
-         method: "POST",
-         body: JSON.stringify({
-            user: userData,
-            orderedItems: cartCtx.items,
-         }),
-      });
-
+      
+      await fetch(
+         "https://react--clone-d9242-default-rtdb.firebaseio.com/orders.json",
+         {
+            method: "POST",
+            body: JSON.stringify({
+               user: userData,
+               orderedItems: cartCtx.items,
+            }),
+         }
+      );
+      
       setIsSubmitting(false);
       setDidSubmit(true);
       cartCtx.clearCart();
