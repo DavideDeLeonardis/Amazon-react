@@ -20,7 +20,6 @@ const Cart = (props) => {
 
    const cartItemAddHandler = (item) => {
       cartCtx.addItem(item);
-      console.log(item);
    };
 
    const orderHandler = () => {
@@ -79,10 +78,12 @@ const Cart = (props) => {
    const cartModalContent = (
       <Fragment>
          {cartItems}
-         <div>
-            <span>Total Amount</span>
-            <span>{totalAmount}</span>
-         </div>
+         {hasItems && (
+            <div>
+               <span>Total Amount</span>
+               <span>{totalAmount}</span>
+            </div>
+         )}
          {isCheckout && (
             <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
          )}

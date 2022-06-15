@@ -1,8 +1,5 @@
 const CartItem = (props) => {
-   // const price = `$${props.price.toFixed(2)}`;
-   const price = `$${props.price}`;
-
-   console.log(props);
+   const price = `$${props.price.toFixed(2)}`;
 
    return (
       <li>

@@ -1,16 +1,12 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-// to delete
 import { useContext } from "react";
 import ProductItemForm from "./ProductItemForm";
 import CartContext from "../../store/cart-context";
-// to delete
 
 const ProductItem = (props) => {
-   const price = `$${props.price}`;
-   // const price = `$${props.price.toFixed(2)}`;
+   const price = `$${props.price.toFixed(2)}`;
 
-   // to delete
    const cartCtx = useContext(CartContext);
    const addToCartHandler = (amount) => {
       cartCtx.addItem({
@@ -20,19 +16,18 @@ const ProductItem = (props) => {
          price: props.price,
       });
    };
-   // to delete
 
    return (
       <li>
          <hr />
          <span>{props.brand}</span>
-         <br></br>
+         <br />
          <h3>{props.name}</h3>
          <div>{props.description}</div>
          <img src={props.image} alt={props.name} />
          <div>{price}€</div>
-         <ProductItemForm onAddToCart={addToCartHandler} /> {/* to delete */}
-         <Link to={`/products/${props.id}`}>VEDI</Link>
+         <ProductItemForm onAddToCart={addToCartHandler} />
+         {/* <Link to={`/products/${props.id}`}>VEDI</Link> */}
       </li>
    );
 };
