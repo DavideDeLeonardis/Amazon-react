@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import { useState } from "react";
 
 import Intro from "./components/Layout/Intro";
@@ -12,6 +13,8 @@ import "./index.scss";
 function App() {
    const [cartIsShown, setCartIsShown] = useState(false);
 
+   const portalElement = document.getElementById('overlays');
+
    const showCarthandler = () => {
       setCartIsShown(true);
    };
@@ -22,7 +25,7 @@ function App() {
 
    return (
       <CartProvider>
-         {cartIsShown && <Cart onClose={hideCartHandler} />}
+         {ReactDOM.createPortal(cartIsShown && <Cart onClose={hideCartHandler} />, portalElement)}
          <Header onShowCart={showCarthandler} />
          <main>
             <Intro />
