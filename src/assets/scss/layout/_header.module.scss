@@ -57,11 +57,8 @@ header {
             text-align: center;
             color: #646464;
             background-color: #f0f0f0;
-            border: none;
             border-radius: 3px 0 0 3px;
-            outline: none;
             transition: 200ms;
-            cursor: pointer;
 
             &:hover {
                background-color: #dadada;
@@ -113,7 +110,6 @@ header {
       height: 40px;
       font-weight: 600;
       font-size: 0.9em;
-      background-color: #242f3e;
       padding: 0 calc(1em - 6px) 0 calc(1em - 3px);
 
       ul {

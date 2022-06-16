@@ -12,7 +12,7 @@ const HeaderNavbar = () => {
    ));
 
    return (
-      <nav>
+      <nav className="bg_dark_blue">
          <ul>
             <li>
                <FontAwesomeIcon className={classes.bars_icon} icon="fa-bars" />

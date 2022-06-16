@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import Select from "../UI/Select";
 import List from "../UI/List";
 import {
@@ -14,8 +12,14 @@ import amazon_logo from "../../assets/images/amazon-logo-white.png";
 import classes from "../../assets/scss/layout/_footer.module.scss";
 
 const Footer = () => {
-   const lists = (
-      <Fragment>
+   const footerTop = (
+      <a href="#header">
+         <div className={classes.footer_top}>Back to top</div>
+      </a>
+   );
+
+   const footerMiddle = (
+      <div className={classes.footer_middle}>
          <div className={classes.col}>
             <List values={listItemsCol1} />
          </div>
@@ -28,11 +32,11 @@ const Footer = () => {
          <div className={classes.col}>
             <List values={listItemsCol4} />
          </div>
-      </Fragment>
+      </div>
    );
 
    const footerBottom = (
-      <Fragment>
+      <div className={classes.footer_bottom}>
          <a href="https://amazon.com">
             <img src={amazon_logo} alt="logo amazon" />
          </a>
@@ -47,18 +51,28 @@ const Footer = () => {
             <div className={classes.footer_b_el}>USD - U.S. Dollar</div>
             <div className={classes.footer_b_el}>United States</div>
          </div>
-      </Fragment>
+      </div>
+   );
+
+   const privacy = (
+      <div className={classes.container_privacy}>
+         <a href="https://amazon.com">Conditions of Use</a>
+         <a href="https://amazon.com">Privacy Notice</a>
+         <a href="https://amazon.com">Interest-Based Ads</a>
+         <a href="https://amazon.com">
+            © 1996-2022, Amazon.com, Inc. or its affiliates
+         </a>
+      </div>
    );
 
    return (
       <footer className={classes.footer}>
-         <a href="#header">
-            <div className={classes.footer_top}>Back to top</div>
-         </a>
-
-         <div className={classes.footer_middle}>{lists}</div>
-
-         <div className={classes.footer_bottom}>{footerBottom}</div>
+         {footerTop}
+         <div className="bg_dark_blue">
+            {footerMiddle}
+            {footerBottom}
+            {privacy}
+         </div>
       </footer>
    );
 };

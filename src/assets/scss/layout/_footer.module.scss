@@ -3,6 +3,10 @@
 .footer {
    color: #ffffff;
 
+   a:hover {
+      text-decoration: underline;
+   }
+
    .footer_top {
       text-align: center;
       font-size: 0.9em;
@@ -16,12 +20,11 @@
          $align: flex-start,
          $wrap: true
       );
-      background-color: #242f3e;
-      padding: 50px 15px;
+      padding: 50px 5%;
 
       .col {
          width: 25%;
-         padding-left: 10px;
+         padding: 5px;
 
          li {
             font-size: 0.85em;
@@ -35,10 +38,9 @@
    }
 
    .footer_bottom {
-      @include mixin.flex($justify: center, $gap: 60px, $wrap: true);
-      background-color: #242f3e;
+      @include mixin.flex($gap: 60px, $wrap: true);
       padding: 30px 0;
-      border-top: 1px solid #5b5b5b;
+      border-top: 1px solid #484848;
 
       img {
          width: 80px;
@@ -52,20 +54,30 @@
             padding: 7px 15px;
             border: 1px solid #808080;
             border-radius: 2px;
+            cursor: pointer;
+
+            &:hover {
+               border: 1px solid #949494;
+            }
 
             .select {
                color: #ffffff;
-               background-color: inherit;
-               border: none;
             }
          }
       }
    }
 
+   .container_privacy {
+      @include mixin.flex($gap: 30px, $wrap: true);
+      font-size: 0.7em;
+      padding: 20px 10px;
+   }
+
    @media screen and (max-width: 768px) {
-      .col {
-         width: 50% !important;
+      .footer_middle .col {
+         width: 50%;
          margin-bottom: 20px;
+         padding-left: 10%;
       }
 
       .footer_bottom {
