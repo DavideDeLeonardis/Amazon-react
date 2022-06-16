@@ -1,5 +1,5 @@
 .cart {
-   position: absolute;
+   position: fixed;
    top: 0;
    right: 0;
    width: 25%;
@@ -8,6 +8,7 @@
    background-color: #ffffff;
    z-index: 20;
    animation: slide-right 300ms ease-out forwards;
+   overflow: scroll;
 }
 
 @keyframes slide-right {
