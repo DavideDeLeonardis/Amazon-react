@@ -13,7 +13,7 @@ import classes from "../../assets/scss/layout/_footer.module.scss";
 
 const Footer = () => {
    const footerTop = (
-      <a href="#header">
+      <a href="#intro">
          <div className={classes.footer_top}>Back to top</div>
       </a>
    );
