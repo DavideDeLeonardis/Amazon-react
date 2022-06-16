@@ -7,8 +7,8 @@ import {
    listItemsCol2,
    listItemsCol3,
    listItemsCol4,
-} from "../../assets/config/footerListitems";
-import languages from "../../assets/config/languages";
+} from "../../assets/config/footerListItems";
+import languages from "../../assets/config/selectLanguages";
 
 import amazon_logo from "../../assets/images/amazon-logo-white.png";
 

@@ -7,7 +7,7 @@ import classes from "../../assets/scss/Header.module.scss";
 const HeaderNavbar = () => {
    const navItems = navListItems.map((item, index) => (
       <li key={index} className="d_none_w_s">
-         {item}
+         <a href={item.href}>{item.text}</a>
       </li>
    ));
 
