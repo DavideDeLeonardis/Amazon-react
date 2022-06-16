@@ -4,9 +4,11 @@ import Nav from "./MainNavbar";
 import AllProducts from "../../pages/AllProducts";
 // import ProductDetails from "../../pages/...ProductDetails";
 
+import classes from "../../assets/scss/layout/_main.module.scss";
+
 const Main = () => {
    return (
-      <main>
+      <main className={classes.main}>
          <Nav />
          <Routes>
             <Route path="/" element={<Navigate replace to="/products" />} />

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import ProductItem from "../components/ProductItem/ProductItem";
 import useFetch from "../hooks/useFetch";
 
+import classes from "../assets/scss/layout/_products.module.scss";
+
 const AllProducts = () => {
    const [products, setProducts] = useState([]);
    const { isLoading, error, sendRequest: fetchProducts } = useFetch();
@@ -61,7 +63,11 @@ const AllProducts = () => {
       />
    ));
 
-   return <ul>{productsList}</ul>;
+   return (
+      <div className={classes.products}>
+         <ul>{productsList}</ul>
+      </div>
+   );
 };
 
 export default AllProducts;

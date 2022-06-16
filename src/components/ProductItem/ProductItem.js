@@ -19,7 +19,6 @@ const ProductItem = (props) => {
 
    return (
       <li>
-         <hr />
          <span>{props.brand}</span>
          <br />
          <h3>{props.name}</h3>
@@ -27,6 +26,7 @@ const ProductItem = (props) => {
          <img src={props.image} alt={props.name} />
          <div>{price}€</div>
          <ProductItemForm onAddToCart={addToCartHandler} />
+         <br /><br />
          {/* <Link to={`/products/${props.id}`}>VEDI</Link> */}
       </li>
    );
