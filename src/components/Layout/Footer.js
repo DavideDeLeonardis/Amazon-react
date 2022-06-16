@@ -11,7 +11,7 @@ import {
 import languages from "../../assets/config/selectLanguages";
 import amazon_logo from "../../assets/images/amazon-logo-white.png";
 
-import classes from "../../assets/scss/Footer.module.scss";
+import classes from "../../assets/scss/layout/_footer.module.scss";
 
 const Footer = () => {
    const lists = (

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import navListItems from "../../assets/config/headerNavItems";
 
-import classes from "../../assets/scss/Header.module.scss";
+import classes from "../../assets/scss/layout/_header.module.scss";
 
 const HeaderNavbar = () => {
    const navItems = navListItems.map((item, index) => (

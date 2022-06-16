@@ -8,7 +8,7 @@ import DoubleLine from "../UI/DoubleLine";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import amazon_logo from "../../assets/images/amazon-logo-white.png";
 
-import classes from "../../assets/scss/Header.module.scss";
+import classes from "../../assets/scss/layout/_header.module.scss";
 
 const Header = (props) => {
    const inputContainer = (
