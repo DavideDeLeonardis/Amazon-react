@@ -3,6 +3,7 @@ import { Fragment } from "react";
 const List = (props) => {
    const listItems = props.values.links.map((link, index) => (
       <li key={index} className={props.className}>
+         {props.showCheckbox && <input type="checkbox" />}
          <a href={link.href}>{link.text}</a>
       </li>
    ));

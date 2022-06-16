@@ -1,4 +1,13 @@
 .main_nav {
    width: 20%;
-   min-width: 160px;
+   min-width: 170px;
+   max-width: 300px;
+
+   .list {
+      margin-bottom: 15px;
+
+      h4 {
+         margin-bottom: 5px;
+      }
+   }
 }

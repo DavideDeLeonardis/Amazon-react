@@ -1,11 +1,6 @@
 import Select from "../UI/Select";
 import List from "../UI/List";
-import {
-   listItemsCol1,
-   listItemsCol2,
-   listItemsCol3,
-   listItemsCol4,
-} from "../../assets/config/footerListItems";
+import * as bundled from "../../assets/config/footerListItems";
 import languages from "../../assets/config/selectLanguages";
 import amazon_logo from "../../assets/images/amazon-logo-white.png";
 
@@ -21,16 +16,16 @@ const Footer = () => {
    const footerMiddle = (
       <div className={classes.footer_middle}>
          <div className={classes.col}>
-            <List values={listItemsCol1} />
+            <List values={bundled.listItemsCol1} />
          </div>
          <div className={classes.col}>
-            <List values={listItemsCol2} />
+            <List values={bundled.listItemsCol2} />
          </div>
          <div className={classes.col}>
-            <List values={listItemsCol3} />
+            <List values={bundled.listItemsCol3} />
          </div>
          <div className={classes.col}>
-            <List values={listItemsCol4} />
+            <List values={bundled.listItemsCol4} />
          </div>
       </div>
    );

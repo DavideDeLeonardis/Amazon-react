@@ -1,6 +1,6 @@
 @use "../mixins" as mixin;
 
 .main {
-   @include mixin.flex($align: flex-start);
+   @include mixin.flex($justify: flex-start, $align: flex-start);
    padding: 20px 10px;
 }
