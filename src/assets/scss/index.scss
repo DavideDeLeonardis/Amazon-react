@@ -1,2 +1,61 @@
+@use "./mixins" as mixin;
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
-@import "./commons.scss";
+
+// general
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+}
+
+body {
+   font-size: 100%;
+   font-family: "PT Sans", sans-serif;
+}
+
+// commons
+ul {
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+button,
+a {
+   cursor: pointer;
+}
+
+.doubleLine {
+   @include mixin.flex(
+      column,
+      $justify: center,
+      $align: flex-start,
+      $gap: 0,
+      $wrap: true
+   );
+
+   span:first-child {
+      font-size: 0.75em;
+      color: rgb(210, 210, 210);
+   }
+
+   span:nth-child(2) {
+      font-weight: bold;
+   }
+}
+
+@media screen and (max-width: 991px) {
+   .d_none_w_md {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .d_none_w_s {
+      display: none !important;
+   }
+}
