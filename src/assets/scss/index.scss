@@ -62,12 +62,18 @@ select {
 
 @media screen and (max-width: 991px) {
    .d_none_w_md {
-      display: none;
+      display: none !important;
    }
 }
 
 @media screen and (max-width: 768px) {
    .d_none_w_s {
+      display: none !important;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .d_none_w_xs {
       display: none !important;
    }
 }

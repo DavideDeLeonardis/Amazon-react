@@ -8,11 +8,19 @@ import {
    faCartShopping,
    faCaretDown,
    faBars,
+   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 import App from "./App";
 
-library.add(faLocationDot, faSearch, faCartShopping, faCaretDown, faBars);
+library.add(
+   faLocationDot,
+   faSearch,
+   faCartShopping,
+   faCaretDown,
+   faBars,
+   faStar,
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,11 +1,47 @@
+import { Fragment } from "react";
+
 import List from "../UI/List";
 import * as bundled from "../../assets/config/mainNavbarItems";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import classes from "../../assets/scss/layout/_mainNavbar.module.scss";
 
 const MainNavbar = () => {
+   const reviewStars = (
+      <Fragment>
+         <div>
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+         </div>
+         <div>
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+         </div>
+         <div>
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+         </div>
+         <div>
+            <FontAwesomeIcon icon="fa-star" className={classes.star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
+         </div>
+      </Fragment>
+   );
+
    return (
-      <nav className={classes.main_nav}>
+      <nav className={`${classes.main_nav} d_none_w_xs`}>
          <div className={classes.list}>
             <List
                values={bundled.climate}
@@ -20,6 +56,10 @@ const MainNavbar = () => {
                containerListClassName={classes.pl}
                ulClassName={classes.pl}
             />
+         </div>
+         <div className={classes.list}>
+            <h4>Avg. Customer Review</h4>
+            {reviewStars}
          </div>
          <div className={classes.list}>
             <List
