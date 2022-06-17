@@ -1,3 +1,8 @@
+export const climate = {
+   heading: "Climate Pledge Friendly",
+   links: [{ text: "Climate Pledge Friendly", href: "https://amazon.com" }],
+};
+
 export const departments = {
    heading: "Computers & Accessories",
    links: [
@@ -42,6 +47,51 @@ export const prices = {
       { text: "$50 to $100", href: "https://amazon.com" },
       { text: "$100 to $200", href: "https://amazon.com" },
       { text: "$200 & Above", href: "https://amazon.com" },
+   ],
+};
+
+export const certified = {
+   heading: "Amazon Certified",
+   links: [
+      { text: "Auto Replenishment", href: "https://amazon.com" },
+      { text: "Works with Alexa", href: "https://amazon.com" },
+   ],
+};
+
+export const ourBrands = {
+   heading: "From Our Brands",
+   links: [{ text: "Our Brands", href: "https://amazon.com" }],
+};
+
+export const packaging = {
+   heading: "Packaging Option",
+   links: [{ text: "Frustration-Free Packaging", href: "https://amazon.com" }],
+};
+
+export const upcoming = {
+   heading: "New & Upcoming",
+   links: [
+      { text: "New Arrivals", href: "https://amazon.com" },
+      { text: "Coming Soon", href: "https://amazon.com" },
+   ],
+};
+
+export const certifications = {
+   heading: "Certifications",
+   links: [{ text: "Energy Star", href: "https://amazon.com" }],
+};
+
+export const globalStore = {
+   heading: "Amazon Global Store",
+   links: [{ text: "Amazon Global Store", href: "https://amazon.com" }],
+};
+
+export const conditions = {
+   heading: "Condition",
+   links: [
+      { text: "New", href: "https://amazon.com" },
+      { text: "Used", href: "https://amazon.com" },
+      { text: "Renewed", href: "https://amazon.com" },
    ],
 };
 

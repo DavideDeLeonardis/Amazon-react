@@ -1,6 +1,6 @@
 .main_nav {
    width: 20%;
-   min-width: 170px;
+   min-width: 185px;
    max-width: 300px;
 
    .list {
@@ -8,6 +8,14 @@
 
       h4 {
          margin-bottom: 5px;
+      }
+
+      .input {
+         margin-right: 5px;
+      }
+
+      .pl {
+         padding-left: 10px;
       }
    }
 }

@@ -65,6 +65,7 @@ const AllProducts = () => {
 
    return (
       <div className={classes.products}>
+         <h3>RESULTS</h3>
          <ul>{productsList}</ul>
       </div>
    );
