@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ProductItem from "../components/ProductItem/ProductItem";
 import useFetch from "../hooks/useFetch";
 
-import classes from "../assets/scss/layout/_products.module.scss";
+import classes from "../assets/scss/layout/_main.module.scss";
 
 const AllProducts = () => {
    const [products, setProducts] = useState([]);

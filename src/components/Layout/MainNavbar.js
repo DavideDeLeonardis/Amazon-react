@@ -4,7 +4,7 @@ import List from "../UI/List";
 import * as bundled from "../../assets/config/mainNavbarItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import classes from "../../assets/scss/layout/_mainNavbar.module.scss";
+import classes from "../../assets/scss/layout/_main.module.scss";
 
 const MainNavbar = () => {
    const reviewStars = (

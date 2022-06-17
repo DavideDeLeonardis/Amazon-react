@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import classes from "../../assets/scss/cart/_checkout.module.scss";
+import classes from "../../assets/scss/layout/_cart.module.scss";
 
 const isEmpty = (value) => value.trim() === "";
 const isFiveChars = (value) => value.trim().length === 5;
