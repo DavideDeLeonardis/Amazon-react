@@ -34,8 +34,53 @@
       }
    }
 
-   .products {
+   .products_container {
       width: 80%;
-      padding-left: 15px;
+      padding-left: 20px;
+
+      .products {
+         @include mixin.flex($justify: flex-start, $gap: 10px, $wrap: true);
+         margin-top: 10px;
+
+         .product {
+            margin-bottom: 20px;
+            border: 1px solid #f0efef;
+            border-radius: 5px;
+            overflow: hidden;
+
+            .product_image {
+               text-align: center;
+
+               img {
+                  width: 95%;
+                  max-width: 250px;
+               }
+            }
+
+            .product_content {
+               padding: 10px;
+
+               .prime_logo {
+                  width: 40px;
+               }
+            }
+
+            @media screen and (min-width: 601px) and (max-width: 1400px) {
+               & {
+                  width: calc(100% / 3 - 10px);
+               }
+            }
+         }
+      }
+
+      @media screen and (max-width: 900px) {
+         & {
+            width: 100%;
+
+            .products .product {
+               width: calc(50% - 10px);
+            }
+         }
+      }
    }
 }

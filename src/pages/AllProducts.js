@@ -16,11 +16,11 @@ const AllProducts = () => {
          for (const key in productsObj) {
             loadedProducts.push({
                id: key,
-               brand: productsObj[key].brand,
                name: productsObj[key].name,
                image: productsObj[key].image,
                description: productsObj[key].description,
                price: productsObj[key].price,
+               primeAvailable: productsObj[key].primeAvailable,
             });
          }
 
@@ -55,18 +55,18 @@ const AllProducts = () => {
       <ProductItem
          key={product.id}
          id={product.id}
-         brand={product.brand}
          name={product.name}
          image={product.image}
          description={product.description}
          price={product.price}
+         primeAvailable={product.primeAvailable}
       />
    ));
 
    return (
-      <div className={classes.products}>
+      <div className={classes.products_container}>
          <h3>RESULTS</h3>
-         <ul>{productsList}</ul>
+         <ul className={classes.products}>{productsList}</ul>
       </div>
    );
 };
