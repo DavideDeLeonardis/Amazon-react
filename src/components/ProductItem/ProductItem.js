@@ -21,6 +21,12 @@ const ProductItem = (props) => {
       });
    };
 
+   const bestSeller = (
+      <div className={classes.best_seller_container}>
+         <div className={classes.best_seller}>Best Seller</div>
+      </div>
+   );
+
    const primeLogo = (
       <img
          className={classes.prime_logo}
@@ -32,6 +38,7 @@ const ProductItem = (props) => {
    return (
       // <Link to={`/products/${props.id}`}>VEDI PRODOTTO</Link>
       <li className={classes.product}>
+         {props.isBestSeller && bestSeller}
          <div className={classes.product_image}>
             <img src={props.image} alt={props.name} />
          </div>

@@ -43,10 +43,37 @@
          margin-top: 10px;
 
          .product {
+            position: relative;
             margin-bottom: 20px;
+            padding-top: 25px;
             border: 1px solid #f0efef;
             border-radius: 5px;
             overflow: hidden;
+
+            .best_seller_container {
+               position: absolute;
+               top: 0;
+               left: 0;
+               font-size: 0.8em;
+               color: #ffffff;
+
+               .best_seller {
+                  position: relative;
+                  padding: 5px 15px;
+                  background-color: #e67a00;
+                  z-index: 1;
+
+                  &:after {
+                     content: "";
+                     position: absolute;
+                     bottom: 0;
+                     left: 85px;
+                     border-top: 200px solid #e67a00;
+                     border-right: 80px solid #ffffff;
+                     z-index: -1;
+                  }
+               }
+            }
 
             .product_image {
                text-align: center;

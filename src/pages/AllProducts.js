@@ -21,6 +21,7 @@ const AllProducts = () => {
                description: productsObj[key].description,
                price: productsObj[key].price,
                primeAvailable: productsObj[key].primeAvailable,
+               isBestSeller: productsObj[key].isBestSeller,
             });
          }
 
@@ -60,6 +61,7 @@ const AllProducts = () => {
          description={product.description}
          price={product.price}
          primeAvailable={product.primeAvailable}
+         isBestSeller={product.isBestSeller}
       />
    ));
 
