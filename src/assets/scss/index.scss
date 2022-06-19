@@ -37,6 +37,14 @@ select {
    cursor: pointer;
 }
 
+.star {
+   color: #ffa41d;
+}
+
+.empty_star {
+   color: #d3d3d3;
+}
+
 .doubleLine {
    @include mixin.flex(
       column,

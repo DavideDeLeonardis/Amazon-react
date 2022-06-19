@@ -5,9 +5,13 @@ import useFetch from "../hooks/useFetch";
 
 import classes from "../assets/scss/layout/_main.module.scss";
 
-const AllProducts = () => {
+const AllProducts = (props) => {
    const [products, setProducts] = useState([]);
    const { isLoading, error, sendRequest: fetchProducts } = useFetch();
+
+   const showCartHandler = () => {
+      props.onShowCart();
+   };
 
    useEffect(() => {
       const transformProducts = (productsObj) => {
@@ -18,10 +22,12 @@ const AllProducts = () => {
                id: key,
                name: productsObj[key].name,
                image: productsObj[key].image,
-               description: productsObj[key].description,
                price: productsObj[key].price,
                primeAvailable: productsObj[key].primeAvailable,
                isBestSeller: productsObj[key].isBestSeller,
+               discount: productsObj[key].discount,
+               stockNumber: productsObj[key].stockNumber,
+               stars: productsObj[key].stars,
             });
          }
 
@@ -58,10 +64,13 @@ const AllProducts = () => {
          id={product.id}
          name={product.name}
          image={product.image}
-         description={product.description}
          price={product.price}
          primeAvailable={product.primeAvailable}
          isBestSeller={product.isBestSeller}
+         discount={product.discount}
+         stockNumber={product.stockNumber}
+         stars={product.stars}
+         onShowCart={showCartHandler}
       />
    ));
 

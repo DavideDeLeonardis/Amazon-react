@@ -8,7 +8,7 @@ import Footer from "./components/Layout/Footer";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 
-import "./assets/scss/index.scss"
+import "./assets/scss/index.scss";
 
 function App() {
    const [cartIsShown, setCartIsShown] = useState(false);
@@ -31,7 +31,7 @@ function App() {
          {cartPortal}
          <Header onShowCart={showCarthandler} />
          <Intro />
-         <Main />
+         <Main onShowCart={showCarthandler} />
          <Footer />
       </CartProvider>
    );

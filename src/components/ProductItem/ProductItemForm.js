@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 
 import Input from "../UI/Input";
 
+import classes from "../../assets/scss/layout/_main.module.scss";
+
 const ProductItemForm = (props) => {
    const [amountIsValid, setAmountIsValid] = useState(true);
    const amountInputRef = useRef();
@@ -12,31 +14,32 @@ const ProductItemForm = (props) => {
       const enteredAmount = amountInputRef.current.value;
       const enteredAmountNumber = +enteredAmount;
 
-      if (
-         enteredAmount.trim().length === 0 ||
-         enteredAmountNumber < 1
-      ) {
+      if (enteredAmount.trim().length === 0 || enteredAmountNumber < 1) {
          setAmountIsValid(false);
          return;
       }
 
       props.onAddToCart(enteredAmountNumber);
+      props.onShowCart();
    };
 
    return (
-      <form onSubmit={submitHandler}>
-         <label>Amount</label>
-         <Input
-            ref={amountInputRef}
-            input={{
-               id: "amount",
-               type: "number",
-               min: "1",
-               step: "1",
-               defaultValue: "1",
-            }}
-         />
-         <button>+ Add</button>
+      <form className={classes.form} onSubmit={submitHandler}>
+         <div className={classes.input_container}>
+            <label>Quantity</label>
+            <Input
+               className={classes.input}
+               ref={amountInputRef}
+               input={{
+                  id: "amount",
+                  type: "number",
+                  min: "1",
+                  step: "1",
+                  defaultValue: "1",
+               }}
+            />
+         </div>
+         <button className={classes.btn}>Add to cart</button>
          {!amountIsValid && <p>Please enter a valid amount (Min. 1).</p>}
       </form>
    );

@@ -6,6 +6,7 @@ header {
    left: 0;
    width: 100%;
    color: #ffffff;
+   z-index: 10;
 
    .header_top {
       @include mixin.flex($justify: space-between);

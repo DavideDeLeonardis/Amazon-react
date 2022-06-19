@@ -1,42 +1,18 @@
 import { Fragment } from "react";
 
 import List from "../UI/List";
-import * as bundled from "../../assets/config/mainNavbarItems";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as stars from "../UI/Stars";
+import * as items from "../../assets/config/mainNavbarItems";
 
 import classes from "../../assets/scss/layout/_main.module.scss";
 
 const MainNavbar = () => {
    const reviewStars = (
       <Fragment>
-         <div>
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-         </div>
-         <div>
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-         </div>
-         <div>
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-         </div>
-         <div>
-            <FontAwesomeIcon icon="fa-star" className={classes.star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-            <FontAwesomeIcon icon="fa-star" className={classes.empty_star} />
-         </div>
+         {stars.fourStars}
+         {stars.threeStars}
+         {stars.twoStars}
+         {stars.oneStars}
       </Fragment>
    );
 
@@ -44,7 +20,7 @@ const MainNavbar = () => {
       <nav className={`${classes.main_nav} d_none_w_xs`}>
          <div className={classes.list}>
             <List
-               values={bundled.climate}
+               values={items.climate}
                showCheckbox={true}
                inputClassName={classes.input}
             />
@@ -52,7 +28,7 @@ const MainNavbar = () => {
          <div className={classes.list}>
             <h4>Departments</h4>
             <List
-               values={bundled.departments}
+               values={items.departments}
                containerListClassName={classes.pl}
                ulClassName={classes.pl}
             />
@@ -63,65 +39,65 @@ const MainNavbar = () => {
          </div>
          <div className={classes.list}>
             <List
-               values={bundled.brands}
+               values={items.brands}
                showCheckbox={true}
                inputClassName={classes.input}
             />
          </div>
          <div className={classes.list}>
-            <List values={bundled.prices} />
+            <List values={items.prices} />
          </div>
          <div className={classes.list}>
             <List
-               values={bundled.certified}
-               showCheckbox={true}
-               inputClassName={classes.input}
-            />
-         </div>
-         <div className={classes.list}>
-            <List
-               values={bundled.ourBrands}
+               values={items.certified}
                showCheckbox={true}
                inputClassName={classes.input}
             />
          </div>
          <div className={classes.list}>
             <List
-               values={bundled.packaging}
-               showCheckbox={true}
-               inputClassName={classes.input}
-            />
-         </div>
-         <div className={classes.list}>
-            <List values={bundled.upcoming} />
-         </div>
-         <div className={classes.list}>
-            <List
-               values={bundled.certifications}
+               values={items.ourBrands}
                showCheckbox={true}
                inputClassName={classes.input}
             />
          </div>
          <div className={classes.list}>
             <List
-               values={bundled.globalStore}
+               values={items.packaging}
                showCheckbox={true}
                inputClassName={classes.input}
             />
          </div>
          <div className={classes.list}>
-            <List values={bundled.conditions} />
+            <List values={items.upcoming} />
          </div>
          <div className={classes.list}>
             <List
-               values={bundled.sellers}
+               values={items.certifications}
                showCheckbox={true}
                inputClassName={classes.input}
             />
          </div>
          <div className={classes.list}>
             <List
-               values={bundled.availability}
+               values={items.globalStore}
+               showCheckbox={true}
+               inputClassName={classes.input}
+            />
+         </div>
+         <div className={classes.list}>
+            <List values={items.conditions} />
+         </div>
+         <div className={classes.list}>
+            <List
+               values={items.sellers}
+               showCheckbox={true}
+               inputClassName={classes.input}
+            />
+         </div>
+         <div className={classes.list}>
+            <List
+               values={items.availability}
                showCheckbox={true}
                inputClassName={classes.input}
             />

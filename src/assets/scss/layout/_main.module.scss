@@ -23,14 +23,6 @@
          .pl {
             padding-left: 10px;
          }
-
-         .star {
-            color: #ffa41d;
-         }
-
-         .empty_star {
-            color: #d3d3d3;
-         }
       }
    }
 
@@ -39,7 +31,12 @@
       padding-left: 20px;
 
       .products {
-         @include mixin.flex($justify: flex-start, $gap: 10px, $wrap: true);
+         @include mixin.flex(
+            $justify: flex-start,
+            $align: inherit,
+            $gap: 10px,
+            $wrap: true
+         );
          margin-top: 10px;
 
          .product {
@@ -87,8 +84,75 @@
             .product_content {
                padding: 10px;
 
+               .name {
+                  font-size: 1.2em;
+               }
+
+               .price_container {
+                  margin: 5px 0;
+                  font-size: 1.4em;
+
+                  .discount {
+                     color: #b6022c;
+                  }
+
+                  .price_discounted {
+                     font-size: 0.6em;
+                     text-decoration: line-through;
+                  }
+
+                  .price {
+                     font-weight: bold;
+                  }
+
+                  .actual_price {
+                     font-weight: bold;
+                     margin: 0 8px;
+                  }
+               }
+
+               .shipping {
+                  @include mixin.flex($justify: flex-start, $gap: 3px);
+                  font-size: 0.75em;
+                  margin: 5px 0;
+               }
+
                .prime_logo {
-                  width: 40px;
+                  display: inline;
+                  width: 35px;
+                  margin-left: 5px;
+               }
+
+               .stock {
+                  color: #b6022c;
+                  font-size: 0.9em;
+                  margin: 5px 0;
+               }
+
+               .form {
+                  margin-top: 20px;
+               }
+
+               .input_container {
+                  @include mixin.flex($gap: 10px);
+                  margin-bottom: 7px;
+               }
+
+               .input {
+                  width: 100%;
+               }
+
+               .btn {
+                  width: 100%;
+                  color: #ffffff;
+                  background-color: #e67a00;
+                  padding: 5px;
+                  border: none;
+                  border-radius: 3px;
+
+                  &:hover {
+                     background-color: #fb8906;
+                  }
                }
             }
 
