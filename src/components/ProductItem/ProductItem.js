@@ -3,6 +3,7 @@ import { Fragment, useContext } from "react";
 
 import ProductItemForm from "./ProductItemForm";
 import CartContext from "../../store/cart-context";
+import * as starsUI from "../UI/Stars";
 import prime_logo from "../../assets/images/prime-logo.png";
 
 import classes from "../../assets/scss/layout/_main.module.scss";
@@ -54,6 +55,28 @@ const ProductItem = (props) => {
       </Fragment>
    );
 
+   let stars;
+   switch (props.stars) {
+      case "five":
+         stars = starsUI.fiveStars;
+         break;
+      case "four":
+         stars = starsUI.fourStars;
+         break;
+      case "three":
+         stars = starsUI.threeStars;
+         break;
+      case "two":
+         stars = starsUI.twoStars;
+         break;
+      case "one":
+         stars = starsUI.oneStars;
+         break;
+      default:
+         stars = "No reviews";
+         break;
+   }
+
    return (
       // <Link to={`/products/${props.id}`}>VEDI PRODOTTO</Link>
       <li className={classes.product}>
@@ -65,6 +88,7 @@ const ProductItem = (props) => {
 
          <div className={classes.product_content}>
             <span className={classes.name}>{props.name}</span>
+            {stars}
             <div className={classes.price_container}>
                {props.discount && discount}
                <span
