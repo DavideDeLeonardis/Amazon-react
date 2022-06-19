@@ -6,7 +6,7 @@ Amazon home page's clone made with <img src="./src/assets/images/logo-react.png"
 <br>
 Available soon: Metamask payment method, products' details, orders history
 
-<hr>
+
 
 ## Install dependencies
 
