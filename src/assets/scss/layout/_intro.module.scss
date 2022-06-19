@@ -3,5 +3,5 @@
 .section {
    @include mixin.flex();
    height: 100px;
-   border-bottom: 1px solid black;
+   border-bottom: 1px solid #f1f0f0;
 }
