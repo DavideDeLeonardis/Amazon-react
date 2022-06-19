@@ -1,7 +1,32 @@
 @use "../mixins" as mixin;
 
 .section {
-   @include mixin.flex();
-   height: 100px;
+   min-height: 100px;
+   text-align: center;
+   background-color: #f7f7f7;
+   padding: 10px 10%;
    border-bottom: 1px solid #f1f0f0;
+
+   .heading {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      span:first-child {
+         color: #0ddafe;
+
+         img {
+            width: 25px;
+            margin-bottom: -5px;
+         }
+      }
+
+      span:nth-child(2) {
+         text-decoration: underline;
+      }
+   }
+
+   h4 {
+      display: inline;
+   }
 }

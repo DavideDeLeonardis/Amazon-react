@@ -33,7 +33,7 @@ const Cart = (props) => {
 
    const submitOrderHandler = async (userData) => {
       setIsSubmitting(true);
-      
+
       await fetch(
          "https://react--clone-d9242-default-rtdb.firebaseio.com/orders.json",
          {
@@ -44,7 +44,7 @@ const Cart = (props) => {
             }),
          }
       );
-      
+
       setIsSubmitting(false);
       setDidSubmit(true);
       cartCtx.clearCart();
@@ -80,15 +80,15 @@ const Cart = (props) => {
 
    const cartModalContent = (
       <Fragment>
+         {isCheckout && (
+            <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
+         )}
          {cartItems}
          {hasItems && (
             <div>
                <span>Total Amount</span>
                <span>{totalAmount}</span>
             </div>
-         )}
-         {isCheckout && (
-            <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
          )}
          {!isCheckout && modalActions}
       </Fragment>
