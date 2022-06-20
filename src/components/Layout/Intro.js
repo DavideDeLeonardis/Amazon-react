@@ -6,7 +6,7 @@ const Intro = () => {
    return (
       <section className={classes.section} id="intro">
          <div className={classes.heading}>
-            Amazon home page's clone made with{" "}
+            TEST Amazon home page's clone made with{" "}
             <span>
                <img src={react_logo} alt="Logo React" />
                React
