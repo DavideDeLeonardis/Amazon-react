@@ -9,6 +9,7 @@ import {
    faCaretDown,
    faBars,
    faStar,
+   faSpinner
 } from "@fortawesome/free-solid-svg-icons";
 
 import App from "./App";
@@ -20,6 +21,7 @@ library.add(
    faCaretDown,
    faBars,
    faStar,
+   faSpinner
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

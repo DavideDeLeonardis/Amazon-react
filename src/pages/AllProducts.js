@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import ProductItem from "../components/ProductItem/ProductItem";
 import useFetch from "../hooks/useFetch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import classes from "../assets/scss/layout/_main.module.scss";
 
@@ -46,7 +47,8 @@ const AllProducts = (props) => {
    if (isLoading) {
       return (
          <section>
-            <p>Loading...</p>
+            <span>Loading...</span>
+            <FontAwesomeIcon className={classes.spinner_icon} icon="fa-spinner" />
          </section>
       );
    }
