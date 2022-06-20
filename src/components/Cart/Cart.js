@@ -68,7 +68,7 @@ const Cart = (props) => {
 
    const modalActions = (
       <Fragment>
-         {!hasItems && <h3>Empty cart</h3>}
+         {!hasItems && <h3 className="p_10">Empty cart</h3>}
          <div className={classes.buttons_container}>
             <button className={classes.orange_btn} onClick={props.onClose}>
                Close
@@ -95,7 +95,7 @@ const Cart = (props) => {
          )}
          {cartItems}
          {hasItems && (
-            <div>
+            <div className={classes.amount_container}>
                <span>TOTAL AMOUNT: </span>
                <span className={classes.amount}>{totalAmount}</span>
             </div>
@@ -103,15 +103,15 @@ const Cart = (props) => {
       </Fragment>
    );
 
-   const isSubmittingModalContent = <p>Sending order data...</p>;
+   const isSubmittingModalContent = <p className="p_10">Sending order data...</p>;
 
    const didSubmitModalContent = (
-      <Fragment>
+      <div className="p_10">
          <p>Successfully sent the order!</p>
-         <div>
-            <button onClick={props.onClose}>Close</button>
+         <div className={classes.buttons_container}>
+            <button className={classes.orange_btn} onClick={props.onClose}>Close</button>
          </div>
-      </Fragment>
+      </div>
    );
 
    return (

@@ -9,7 +9,6 @@
    max-width: 400px;
    height: 100%;
    background-color: #ffffff;
-   padding: 7px 5px;
    border-left: 1px solid black;
    z-index: 20;
    animation: slide-right 300ms ease-out forwards;
@@ -17,7 +16,7 @@
 
    .buttons_container {
       @include mixin.flex($justify: flex-start, $gap: 5px);
-      margin-bottom: 10px;
+      margin: 10px 0 10px 5px;
 
       .orange_btn {
          width: calc(100% / 3 - 5px);
@@ -36,7 +35,7 @@
 
    li {
       margin-bottom: 15px;
-      padding: 5px;
+      padding: 10px;
 
       .name {
          display: block;
@@ -50,12 +49,29 @@
 
       .buttons_container .orange_btn {
          width: 25%;
-         margin-top: 10px;
       }
    }
 
-   .amount {
-      font-size: 1.1em;
+   .amount_container {
+      margin: 0 5px;
+
+      .amount {
+         font-size: 1.1em;
+      }
+   }
+
+   form {
+      background-color: #f7f7f7;
+      animation: slide-right 300ms ease-out forwards;
+
+      label {
+         margin-right: 5px;
+      }
+
+      input {
+         width: 100%;
+         margin-bottom: 5px;
+      }
    }
 }
 

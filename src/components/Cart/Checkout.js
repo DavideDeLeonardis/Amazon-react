@@ -70,7 +70,7 @@ const Checkout = (props) => {
    }`;
 
    return (
-      <form className={classes.form} onSubmit={confirmHandler}>
+      <form className={`${classes.form} p_10`} onSubmit={confirmHandler}>
          <div className={nameControlClasses}>
             <label htmlFor="name">Your Name</label>
             <input type="text" id="name" ref={nameInputRef} />
@@ -93,11 +93,17 @@ const Checkout = (props) => {
             <input type="text" id="city" ref={cityInputRef} />
             {!formInputsValidity.city && <p>Please enter a valid city!</p>}
          </div>
-         <div className={classes.actions}>
-            <button type="button" onClick={props.onCancel}>
+         <div className={`${classes.actions} ${classes.buttons_container}`}>
+            <button
+               className={classes.orange_btn}
+               type="button"
+               onClick={props.onCancel}
+            >
                Cancel
             </button>
-            <button className={classes.submit}>Confirm</button>
+            <button className={`${classes.orange_btn} btn-blue ${classes.submit}`}>
+               Confirm
+            </button>
          </div>
       </form>
    );
