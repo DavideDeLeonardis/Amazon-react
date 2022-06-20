@@ -45,6 +45,16 @@ select {
    color: #d3d3d3;
 }
 
+
+.btn-blue {
+   background-color: #242F3E !important;
+   transition: 100ms;
+
+   &:hover {
+      background-color: #374b67 !important;
+   }
+}
+
 .doubleLine {
    @include mixin.flex(
       column,

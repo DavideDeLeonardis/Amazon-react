@@ -12,7 +12,7 @@ const Cart = (props) => {
    const [didSubmit, setDidSubmit] = useState(false);
    const cartCtx = useContext(CartContext);
 
-   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+   const totalAmount = `${cartCtx.totalAmount.toFixed(2)}€`;
    const hasItems = cartCtx.items.length > 0;
 
    const cartItemRemoveHandler = (id) => {
@@ -67,30 +67,39 @@ const Cart = (props) => {
    );
 
    const modalActions = (
-      <div>
-         <button onClick={props.onClose}>Close</button>
-         {hasItems && (
-            <Fragment>
-               <button onClick={clearCart}>Clear cart</button>
-               <button onClick={orderHandler}>Order</button>
-            </Fragment>
-         )}
-      </div>
+      <Fragment>
+         {!hasItems && <h3>Empty cart</h3>}
+         <div className={classes.buttons_container}>
+            <button className={classes.orange_btn} onClick={props.onClose}>
+               Close
+            </button>
+            {hasItems && (
+               <Fragment>
+                  <button className={classes.orange_btn} onClick={clearCart}>
+                     Clear cart
+                  </button>
+                  <button className={`${classes.orange_btn} btn-blue`} onClick={orderHandler}>
+                     Order
+                  </button>
+               </Fragment>
+            )}
+         </div>
+      </Fragment>
    );
 
    const cartModalContent = (
       <Fragment>
+         {!isCheckout && modalActions}
          {isCheckout && (
             <Checkout onConfirm={submitOrderHandler} onCancel={props.onClose} />
          )}
          {cartItems}
          {hasItems && (
             <div>
-               <span>Total Amount</span>
-               <span>{totalAmount}</span>
+               <span>TOTAL AMOUNT: </span>
+               <span className={classes.amount}>{totalAmount}</span>
             </div>
          )}
-         {!isCheckout && modalActions}
       </Fragment>
    );
 
