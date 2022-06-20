@@ -19,3 +19,4 @@ Available soon: Metamask payment method, products' details, orders history
 <br>
 
 ## Screens
+<img src="./src/assets/images/home.png" />
