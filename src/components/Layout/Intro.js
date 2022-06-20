@@ -15,7 +15,7 @@ const Intro = () => {
             and order!
          </div>
          <h4>Available soon: </h4>
-         <span>Metamask payment method, products' details, orders history</span>
+         <span>Metamask payment method, products' details, auth and orders history</span>
       </section>
    );
 };

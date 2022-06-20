@@ -8,6 +8,7 @@
       width: 20%;
       min-width: 185px;
       max-width: 300px;
+      overflow: scroll;
 
       .list {
          margin-bottom: 15px;
@@ -33,7 +34,7 @@
       .products {
          @include mixin.flex(
             $justify: flex-start,
-            $align: inherit,
+            $align: stretch,
             $gap: 10px,
             $wrap: true
          );
@@ -42,7 +43,7 @@
          .product {
             position: relative;
             margin-bottom: 20px;
-            padding-top: 25px;
+            padding: 30px 5px 5px 5px;
             border: 1px solid #f1f0f0;
             border-radius: 5px;
             overflow: hidden;
@@ -73,10 +74,13 @@
             }
 
             .product_image {
+               min-height: 200px;
+               max-height: 200px;
                text-align: center;
+               overflow: hidden;
 
                img {
-                  width: 95%;
+                  width: 80%;
                   max-width: 250px;
                   transition: 200ms;
                }
@@ -87,6 +91,16 @@
 
                .name {
                   font-size: 1.2em;
+                  margin-bottom: 3px;
+               }
+
+               .container_reviews {
+                  @include mixin.flex($justify: flex-start, $gap: 7px);
+
+                  span {
+                     color: #017185;
+                     font-size: 0.8em;
+                  }
                }
 
                .price_container {
@@ -160,12 +174,6 @@
             &:hover .product_image img {
                transform: scale(1.05);
             }
-
-            @media screen and (min-width: 601px) and (max-width: 1400px) {
-               & {
-                  width: calc(100% / 3 - 10px);
-               }
-            }
          }
       }
 
@@ -176,6 +184,24 @@
             .products .product {
                width: calc(50% - 10px);
             }
+         }
+      }
+
+      @media screen and (min-width: 901px) {
+         .products .product {
+            width: calc(100% / 3 - 10px);
+         }
+      }
+
+      @media screen and (min-width: 1200px) {
+         .products .product {
+            width: calc(100% / 4 - 10px);
+         }
+      }
+
+      @media screen and (min-width: 1800px) {
+         .products .product {
+            width: calc(100% / 5 - 10px);
          }
       }
    }

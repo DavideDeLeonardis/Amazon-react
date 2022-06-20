@@ -28,6 +28,7 @@ const AllProducts = (props) => {
                discount: productsObj[key].discount,
                stockNumber: productsObj[key].stockNumber,
                stars: productsObj[key].stars,
+               reviews: productsObj[key].reviews,
             });
          }
 
@@ -70,6 +71,7 @@ const AllProducts = (props) => {
          discount={product.discount}
          stockNumber={product.stockNumber}
          stars={product.stars}
+         reviews={product.reviews}
          onShowCart={showCartHandler}
       />
    ));

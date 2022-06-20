@@ -5,6 +5,7 @@ import ProductItemForm from "./ProductItemForm";
 import CartContext from "../../store/cart-context";
 import * as starsUI from "../UI/Stars";
 import prime_logo from "../../assets/images/prime-logo.png";
+import not_found from "../../assets/images/not-found.jpeg";
 
 import classes from "../../assets/scss/layout/_main.module.scss";
 
@@ -57,23 +58,23 @@ const ProductItem = (props) => {
 
    let stars;
    switch (props.stars) {
-      case "five":
+      case 5:
          stars = starsUI.fiveStars;
          break;
-      case "four":
+      case 4:
          stars = starsUI.fourStars;
          break;
-      case "three":
+      case 3:
          stars = starsUI.threeStars;
          break;
-      case "two":
+      case 2:
          stars = starsUI.twoStars;
          break;
-      case "one":
+      case 1:
          stars = starsUI.oneStars;
          break;
       default:
-         stars = "No reviews";
+         stars = "No reviews yet";
          break;
    }
 
@@ -83,12 +84,14 @@ const ProductItem = (props) => {
          {props.isBestSeller && bestSeller}
 
          <div className={classes.product_image}>
-            <img src={props.image} alt={props.name} />
+            <img src={props.image ? props.image : not_found} alt={props.name} />
          </div>
 
          <div className={classes.product_content}>
-            <span className={classes.name}>{props.name}</span>
-            {stars}
+            <div className={classes.name}>{props.name}</div>
+            <div className={classes.container_reviews}>
+               {stars} <span>{props.reviews}</span>
+            </div>
             <div className={classes.price_container}>
                {props.discount && discount}
                <span

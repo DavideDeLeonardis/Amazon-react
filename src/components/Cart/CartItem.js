@@ -4,7 +4,7 @@ const CartItem = (props) => {
    return (
       <li>
          <div>
-            <h2>{props.name}</h2>
+            <h3>{props.name}</h3>
             <div>
                <span>{price}</span>
                <span>x {props.amount}</span>
