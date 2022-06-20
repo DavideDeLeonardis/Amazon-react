@@ -3,6 +3,7 @@ import { Fragment, useState, useContext } from "react";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import CartContext from "../../store/cart-context";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import classes from "../../assets/scss/layout/_cart.module.scss";
 
@@ -68,10 +69,9 @@ const Cart = (props) => {
 
    const modalActions = (
       <Fragment>
-         {!hasItems && <h3 className="p_10">Empty cart</h3>}
          <div className={classes.buttons_container}>
-            <button className={classes.orange_btn} onClick={props.onClose}>
-               Close
+            <button className={classes.x_icon} onClick={props.onClose}>
+               <FontAwesomeIcon icon="fa-xmark" />
             </button>
             {hasItems && (
                <Fragment>
@@ -84,6 +84,7 @@ const Cart = (props) => {
                </Fragment>
             )}
          </div>
+         {!hasItems && <h3 className="p_10">Empty cart</h3>}
       </Fragment>
    );
 
