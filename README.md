@@ -8,7 +8,9 @@ Available soon: Metamask payment method, products' details, orders history <br>
 <a href="https://react--clone-d9242.web.app" target="_blank">- SITE PREVIEW -</a>
 
 
-
+--- File starting with ... are working in progress ---
+<br>
+<br>
 ## Install dependencies
 
 `npm install`
