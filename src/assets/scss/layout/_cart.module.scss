@@ -9,6 +9,7 @@
    max-width: 400px;
    height: 100%;
    background-color: #ffffff;
+   padding-bottom: 20px;
    border-left: 1px solid black;
    z-index: 20;
    animation: slide-right 300ms ease-out forwards;
@@ -22,6 +23,7 @@
          width: 25px;
          font-size: 1.3em;
          border: 1px solid #000000;
+         padding-left: 1px;
          border-radius: 50%;
       }
 
@@ -43,11 +45,22 @@
    li {
       margin-bottom: 15px;
       padding: 10px;
+      border-bottom: 1px solid #ececec;
 
       .name {
          display: block;
          font-size: 1.3em;
          font-weight: bold;
+      }
+
+      .container_img {
+         text-align: center;
+         margin: 15px 0;
+
+         img {
+            max-width: 100%;
+            max-height: 300px;
+         }
       }
 
       .price {

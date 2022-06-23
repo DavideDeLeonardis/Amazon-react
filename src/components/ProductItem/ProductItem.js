@@ -16,6 +16,7 @@ const ProductItem = (props) => {
       cartCtx.addItem({
          id: props.id,
          name: props.name,
+         image: props.image,
          amount: amount,
          price: props.price,
       });

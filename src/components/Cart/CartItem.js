@@ -1,3 +1,5 @@
+import not_found from "../../assets/images/not-found.jpeg";
+
 import classes from "../../assets/scss/layout/_cart.module.scss";
 
 const CartItem = (props) => {
@@ -6,6 +8,9 @@ const CartItem = (props) => {
    return (
       <li>
          <span className={classes.name}>{props.name}</span>
+         <div className={classes.container_img}>
+            <img src={props.image ? props.image : not_found} alt={props.name} />
+         </div>
          <span className={classes.price}>{price}</span>
          <span> x {props.amount}</span>
          <div className={classes.buttons_container}>
