@@ -1,4 +1,4 @@
-# Amazon site clone
+# React Amazon
 
 ## Description
 
