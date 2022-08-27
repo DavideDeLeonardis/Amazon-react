@@ -8,10 +8,7 @@ Available soon:
    - products' details, 
    - auth,
    - orders history 
-   
-<br>
 
-### <a href="https://react--clone-d9242.web.app" target="_blank">- SITE PREVIEW -</a>
 <br>
 
 
