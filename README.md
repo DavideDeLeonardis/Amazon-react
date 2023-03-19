@@ -2,7 +2,8 @@
 
 ## Description
 
-Amazon home page clone made with <img src="./src/assets/images/logo-react.png" style="width: 25px; margin: 0 2px -7px 0" />React, <u>add to cart</u> the product you choose, insert your data and order!
+- Amazon home page clone made with React, <u>add to cart</u> the product you choose, insert your data and order!
+- Data is managed with react context and stored in firebase database.
 <br>
 Available soon: 
    - products' details, 
